@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Besoin d'actualités du monde ? simple News vous informe.">
+    <meta name="keywords" content="actualités, infos, Russie, Ukraine, guerre, Irak, france">
+    <meta name="author" content="EBANA Plamedi Fidel">
+
+    <title>SimpleNews</title>
+
+    <!-- *CSS link -->
+    <link rel="stylesheet" href="./public/CSS/style.css">
+    <link rel="stylesheet" href="./public/CSS/animate.css">
+    <link rel="stylesheet" href="./public/CSS/responsive.css">
+
+    <!-- icon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- font family -->
+
+    <!-- *01 - Old Standard TT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- *02 - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- *03 - Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- *icon page-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- *Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+</head>
+<body>
+    <div id="top"></div>
+    <header>
+        <div class="nom-du-site">
+            <h1>SimpleNews</h1>
+        </div>
+        <div class="rubrique">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Live</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <span class="material-symbols-outlined">
+            person
+        </span>
+    </header>
+
+    <main>
+        <aside>
+            <div class="text">
+                <div class="welcome">
+                    <h2>Bonjour !</h2>
+                    <p>Bienvenue sur notre site web. Nous sommes ravis de vous voir ici !</p>
+                </div>
+                <div class="btn-content">
+                    <a href="#">free</a>
+                    <a href="#">premium</a>
+                </div>
+            </div>
+            <div class="personna">
+                <img src="./assets/img/set/Vecteur-site.png" alt="vecteur">
+            </div>
+        </aside>
+    </main>
+
+    <section class="service">
+        <h3>Service</h3>
+        <div class="search-nav">
+            <input type="search" name="" id="searchActu" placeholder="Rechercher les actualités...">
+            <button type="submit" id="searchButton">Search</button>
+        </div>
+        <div class="result">
+            <div class="result-api">
+                <div class="container-1 result-container">
+                    <div class="card-header" style="background-color: var(--color-q);">
+                        <h2>Free Plan</h2>
+                    </div>
+                    <h3 id="result-title-1"></h3>
+                    <p id="result-description-1"></p>
+                    <a id="result-link-1" href="" target="_blank">Read more</a>
+                </div>
+                <div class="container-2 result-container">
+                    <div class="card-header">
+                        <h2>Free Plan</h2>
+                    </div>
+                    <h3 id="result-title-2"></h3>
+                    <p id="result-description-2"></p>
+                    <a id="result-link-2" href="" target="_blank">Read more</a>
+                </div>
+                <div class="container-3 result-container">
+                    <div class="card-header">
+                        <h2>Free Plan</h2>
+                    </div>
+                    <h3 id="result-title-3"></h3>
+                    <p id="result-description-3"></p>
+                    <a id="result-link-3" href="" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="offres">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Free Plan</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Comprend des fonctionnalités de base. Idéal pour un usage personnel.</p>
+                        <button>Choisir le forfait</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Medium Plan</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Comprend des fonctionnalités supplémentaires. Idéal pour les petites équipes.</p>
+                        <button>Choisir le forfait</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Premium Plan</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Toutes les fonctionnalités incluses. Parfait pour les grandes organisations.</p>
+                        <button>Choisir le forfait</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="live">
+        <h3>Live</h3><span class="Point-red"></span>
+        <iframe 
+            src="https://www.youtube.com/embed/l8PMl7tUDIE?si=BP48HG4npvw5_KR5"
+             title="YouTube video player" 
+             frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+             referrerpolicy="strict-origin-when-cross-origin" 
+             allowfullscreen>
+        </iframe>
+    </section>
+
+    <section class="contact">
+        <h2>Contactez-nous</h2>
+        <form onsubmit="submitComment(event)" method="post">
+            <div class="form-group">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <h3>About Us</h3>
+        <div class="network">
+            <span><a href="#" class="facebook"></a></span>
+            <span><a href="#" class="youtube"></a></span>
+            <span><a href="#" class="insta"></a></span>
+        </div>
+
+        <h3>Author</h3>
+        <div class="callback-infos-dev">
+            <span>&COPY;2024 by <a href="mailto:ebanaplamedy@gmail.com">Ebana Fidel Plamedi</a> All rights reserved.</span>
+        </div>
+    </footer>
+
+    <a href="#top" class="material-symbols-outlined btn-up">arrow_circle_up</a>
+
+    <script src="./public/JS/main.js"></script>
+    <script src="./public/JS/firebase.js"></script>
+</body>
+</html>
