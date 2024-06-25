@@ -1,2 +1,2 @@
 # SimpleNews
-Les actualite en live 
+Les actualités en ligne le plus simplement et facilement disponible
