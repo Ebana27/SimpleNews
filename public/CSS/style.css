@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
 
 header {
     display: flex;
-    /* justify-content: space-between;  */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px;
     overflow: hidden;
@@ -55,6 +55,7 @@ header {
 .nom-du-site {
     width: 20%; 
     padding: 6px;
+    font-weight: bold;
 }
 
 .rubrique {
@@ -85,13 +86,17 @@ nav ul li a::after {
     position: absolute;
     content: " ";
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: #010101;
     bottom: -3px;
     left: 0;
     transform-origin: bottom left;
     transform: scaleX(0);
     transition: all 0.7s ease-out;
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -ms-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
 }
 
 nav ul li a:hover::after {
@@ -295,13 +300,13 @@ h3 {
     border: none;
     background-color: #040404;
     color: white;
-    border-radius: 0 8px 8x 0;
+    border-radius: 0 8px 8px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    -webkit-border-radius: 0 8px 8x 0;
-    -moz-border-radius: 0 8px 8x 0;
-    -ms-border-radius: 0 8px 8x 0;
-    -o-border-radius: 0 8px 8x 0;
+    -webkit-border-radius: 0 8px 8px 0;
+    -moz-border-radius: 0 8px 8px 0;
+    -ms-border-radius: 0 8px 8px 0;
+    -o-border-radius: 0 8px 8px 0;
     width: 10vw;
 }
 
@@ -384,7 +389,7 @@ h3 {
     border-top-right-radius: 10px;
     text-align: center;
     height: 3px;
-    padding: 3px auto;
+    padding: 3px;
 }
 
 .result-container .card-header h2 {
@@ -498,31 +503,43 @@ button:hover {
     background: #444;
 }
 
+/* -------------------------- */
+/* Live section is here */
+/* ------------------------- */
+
 .live {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
     position: relative;
     background: var(--color-scnd);
-    height: 50vh;
+    height: 55vh;
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
 }
 
-.live h3 {
-    color: var(--color);
-    margin-bottom: 20px;
-    font-size: 3rem;
+.container-title-Live {
+    margin: 0;
 }
 
-.Point-red {
+.container-title-Live h3 {
+    color: var(--color);
+    margin-bottom: 5px;
+    font-size: 3rem;
+    display: block
+}
+
+.container-title-Live .Point-red {
     width: 15px;
-    height: 15px;
+    height:  15px;
     border: 4px solid rgb(244, 71, 71);
     background-color: red;
-    border-radius: 100%;
-    margin-top: 25px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 12px 3px red;
+    margin-top: 20px;
     margin-left: 5px;
     cursor: pointer;
     transform: scale(1);
@@ -533,6 +550,10 @@ button:hover {
     -moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     -ms-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .Point-red:hover {
@@ -582,17 +603,14 @@ iframe {
 }
 
 .contact {
-    padding: 20px;
-    width: 100%;
     margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
     background: var(--color);
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 25px;
 }
 
 .contact h2 {
@@ -726,12 +744,12 @@ footer h3 {
     padding: 10px 20px;
     border-radius: 55px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.6s, transform 0.3s;
+    transition: background-color 1s 0.5s transform 0.3s;
     cursor: pointer;
-    -webkit-transition: background-color 0.6s, transform 0.3s;
-    -moz-transition: background-color 0.6s, transform 0.3s;
-    -ms-transition: background-color 0.6s, transform 0.3s;
-    -o-transition: background-color 0.6s, transform 0.3s;
+    -webkit-transition: background-color 1s 0.5s transform 0.3s;
+    -moz-transition: background-color 1s 0.5s transform 0.3s;
+    -ms-transition: background-color 1s 0.5s transform 0.3s;
+    -o-transition: background-color 1s 0.5s transform 0.3s;
     -webkit-border-radius: 55px;
     -moz-border-radius: 55px;
     -ms-border-radius: 55px;
@@ -758,28 +776,3 @@ footer h3 {
 .btn-up.hidden {
     display: none;
 }
-
-/* Styles pour la navigation réactive */
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Cacher le menu par défaut sur les petits écrans */
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        position: absolute; /* Positionner le menu par-dessus */
-        top: 60px; /* Ajustez cette valeur selon la hauteur de votre en-tête */
-        right: 20px; /* Ajustez cette valeur selon la position de votre icône */
-        z-index: 5000; /* Assurer que le menu soit au-dessus des autres éléments */
-    }
-
-    nav ul.show {
-        display: flex; /* Afficher le menu quand la classe show est ajoutée */
-    }
-}
-
-
