@@ -405,6 +405,8 @@ a:hover {
 .card-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
 }
