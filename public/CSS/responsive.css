@@ -1,35 +1,51 @@
 @media (max-width: 768px) {
-    header {
+  header {
   display: flex;
   align-items: center;
-  padding: 6px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  text-align: center;
+  overflow: visible;
+  position: relative;
 }
+.nom-du-site, h1 {
+  text-align: center;
+  width: 100%;
+}
+.rubrique {
+  width: 50%;
+}
+.flex {
+  display: flex;
+  opacity: 1;
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  animation: 0.5s fadeIn;
+  -webkit-animation: 0.5s fadeIn;
 
+}
 nav ul {
   display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  background-color: #fff;
-  padding: 6px;
+  background-color: #fff6f616;
+  padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.344);
+  backdrop-filter: blur(15px);
   position: absolute;
   top: 60px;
   right: 20px;
   z-index: 5000;
+  width: 40%;
+  opacity: 0;
+  border: 2px solid red inset;
 }
-
-nav ul.show {
-  display: flex;
-  flex-direction: column;
-}
-
-.material-symbols-outlined {
-  display: none;
-  visibility: hidden;
-}
-
 main {
     padding: 22px;
     height: 100vh;
@@ -37,6 +53,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 aside {
@@ -44,26 +61,29 @@ aside {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    text-align: center;
 }
 .welcome {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     column-gap: 20px;
+    text-align: center;
 }
 .welcome h2 {
     font-size: 15vw;
 }
 .welcome p {
-  text-align: left;
     font-size: 8vw;
     line-height: 1.5;
-    width: 95%;
+    width: 100%;
+    margin: 10px;
 }
 .btn-content {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .btn-content a {
   text-align: center;
@@ -72,7 +92,7 @@ aside {
   border-radius: 22px;
   background-color: var(--color-q);
   color: #000000;
-  width: 20vh;
+  width: 100%;
 }
 .btn-content a:hover {
   transform: scale(1.05);
@@ -84,5 +104,49 @@ aside img {
 }
 }
 
+@media (max-width: 1200px) {
+  .result-container {
+      max-width: 45%;
+  }
+}
 
+@media (max-width: 768px) {
+  h3 {
+      font-size: 4rem;
+  }
+
+  .search-nav input[type="search"] {
+      width: 70vw;
+  }
+
+  .search-nav button {
+      width: auto;
+  }
+
+  .result-container {
+      max-width: 100%;
+  }
+
+  .card-body p {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h3 {
+      font-size: 3rem;
+  }
+
+  .search-nav input[type="search"] {
+      width: 80vw;
+  }
+
+  .result-container h3 {
+      font-size: 20px;
+  }
+
+  .result-container p {
+      font-size: 14px;
+  }
+}
 
