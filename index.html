@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./public/CSS/responsive.css">
 
     <!-- icon -->
-
+ 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -42,11 +42,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <!-- *Firebase CDN -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-
 </head>
 <body>
     <div id="top"></div>
@@ -57,16 +52,18 @@
         <div class="rubrique">
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Live</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#live">Live</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <span class="material-symbols-outlined">
-            person
-        </span>
+        <a href="#author">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+        </a>
     </header>
 
     <main>
@@ -87,10 +84,10 @@
         </aside>
     </main>
 
-    <section class="service">
+    <section class="service" id="service">
         <h3>Service</h3>
         <div class="search-nav">
-            <input type="search" name="" id="searchActu" placeholder="Rechercher les actualités...">
+            <input type="search" name="search" id="searchActu" placeholder="Rechercher les actualités...">
             <button type="submit" id="searchButton">Search</button>
         </div>
         <div class="result">
@@ -129,7 +126,7 @@
                     </div>
                     <div class="card-body">
                         <p>Comprend des fonctionnalités de base. Idéal pour un usage personnel.</p>
-                        <button>Choisir le forfait</button>
+                        <button class="active-forf">forfait Actif</button>
                     </div>
                 </div>
                 <div class="card">
@@ -154,19 +151,23 @@
         </div>
     </section>
 
-    <section class="live">
-        <h3>Live</h3><span class="Point-red"></span>
-        <iframe 
-            src="https://www.youtube.com/embed/l8PMl7tUDIE?si=BP48HG4npvw5_KR5"
-             title="YouTube video player" 
-             frameborder="0" 
-             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-             referrerpolicy="strict-origin-when-cross-origin" 
-             allowfullscreen>
+    <section class="iframeSect" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <section class="live" id="live">
+            <div class="container-title-Live">
+                <h3>Live<span class="Point-red"></span></h3>
+            </div>
+        </section>
+        <iframe
+        src="https://www.youtube.com/embed/l8PMl7tUDIE?si=BP48HG4npvw5_KR5"
+         title="YouTube video player"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+         referrerpolicy="strict-origin-when-cross-origin"
+         allowfullscreen>
         </iframe>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>Contactez-nous</h2>
         <form name="contact" netlify>
             <div class="form-group">
@@ -182,7 +183,6 @@
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
             <input type="hidden" id="timestamp" name="timestamp" value="">
-
             <button type="submit">Envoyer</button>
         </form>
     </section>
@@ -196,7 +196,7 @@
         </div>
 
         <h3>Author</h3>
-        <div class="callback-infos-dev">
+        <div class="callback-infos-dev" id="author">
             <span>&COPY;2024 by <a href="mailto:ebanaplamedy@gmail.com">Ebana Fidel Plamedi</a> All rights reserved.</span>
         </div>
     </footer>
@@ -204,6 +204,5 @@
     <a href="#top" class="material-symbols-outlined btn-up">arrow_circle_up</a>
 
     <script src="./public/JS/main.js"></script>
-    <script src="./public/JS/firebase.js"></script>
 </body>
 </html>
