@@ -407,6 +407,7 @@ a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap
     gap: 25px;
     flex-wrap: wrap;
 }
