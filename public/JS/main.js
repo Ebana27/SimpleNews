@@ -74,3 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+const barNavResp = document.querySelector('nav ul');
+const Titre = document.querySelector("h1");
+
+Titre.addEventListener("click", (e) => {
+    parseInt(e)
+    console.log(e+1)
+    barNavResp.classList.toggle('flex');
+})
