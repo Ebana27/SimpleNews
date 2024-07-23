@@ -322,6 +322,7 @@ h3 {
     text-align: center;
     gap: 20px;
     margin-bottom: 5vb;
+    flex-direction: row;
 }
 
 .result-container {
