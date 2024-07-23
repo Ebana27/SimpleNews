@@ -9,6 +9,16 @@
   overflow: visible;
   position: relative;
 }
+.result-api {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 5vb;
+    flex-direction: column;
+}
+  
 .nom-du-site, h1 {
   text-align: center;
   width: 100%;
